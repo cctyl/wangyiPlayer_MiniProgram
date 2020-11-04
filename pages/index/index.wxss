@@ -43,8 +43,59 @@
   font-size: 26rpx;
 }
 
+.recommendContainer{
+padding: 20rpx;
+
+}
+
 .recommendContainer .head .title{
 
 
   font-size: 32rpx;
+  line-height: 80rpx;
+  color: #666;
+}
+
+.recommendContainer .head .more{
+
+  float: right;
+  border: 1rpx solid #333;
+  border-radius: 30rpx;
+  padding: 10rpx 20rpx;
+  font-size: 24rpx;
+}
+
+.recommendScroll{
+  display: flex;
+  /* margin-top: 20rpx; */
+  padding-top: 20rpx;
+}
+
+.scrollItem{
+
+  width: 200rpx;
+  margin-right: 20rpx;
+}
+
+.scrollItem image{
+
+  width: 180rpx;
+  height: 180rpx;
+  border-radius: 10rpx;
+}
+
+.scrollItem text{
+
+  /* 单行文本溢出隐藏，用省略号代替 */
+  /* font-size: 26rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;   */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display:-webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  font-size: 26rpx;
 }

@@ -2,17 +2,11 @@
 
   <!-- 轮播图区域 -->
   <swiper class="banners" indicator-dots="true" indicator-color="ivory" indicator-active-color="#d43c33">
-    <swiper-item>
-      <image src="/static/images/index.jpg"></image>
+    <swiper-item wx:for="{{bannerList}}">
+      <image src="{{item.pic}}"></image>
     </swiper-item>
 
-    <swiper-item>
-      <image src="/static/images/index2.jpg"></image>
-    </swiper-item>
-
-    <swiper-item>
-      <image src="/static/images/index3.jpg"></image>
-    </swiper-item>
+   
 
 
   </swiper>
@@ -51,7 +45,7 @@
 
 
   <!-- 推荐歌曲内容区 -->
-  <view class="recommendContainer"> 
+  <view class="recommendContainer">
 
     <view class="head">
       <text class="title"> 推荐歌曲</text>
@@ -59,7 +53,31 @@
         <text>为你精心推荐</text>
         <text class="more">查看更多</text>
       </view>
+
+
     </view>
+
+    <scroll-view class="recommendScroll" enable-flex="true" scroll-x="true">
+      <view class="scrollItem">
+        <image src="/static/images/scrollpic1.jpg"></image>
+        <text>这是一条没水平的广告这是一条没水平的广告这是一条没水平的广告这是一条没水平的广告</text>
+      </view>
+
+      <view class="scrollItem">
+        <image src="/static/images/scrollpic1.jpg"></image>
+        <text>这是一条没水平的广告这是一条没水平的广告这是一条没水平的广告这是一条没水平的广告</text>
+      </view>
+      <view class="scrollItem">
+        <image src="/static/images/scrollpic1.jpg"></image>
+        <text>这是一条没水平的广告这是一条没水平的广告这是一条没水平的广告这是一条没水平的广告</text>
+      </view>
+      <view class="scrollItem">
+        <image src="/static/images/scrollpic1.jpg"></image>
+        <text>这是一条没水平的广告这是一条没水平的广告这是一条没水平的广告这是一条没水平的广告这是一条没水平的广告</text>
+      </view>
+
+    </scroll-view>
+
   </view>
 
 
