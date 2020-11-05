@@ -46,11 +46,14 @@ Page({
       };
 
       topArray.push(myTop);
+
+
+      this.setData({
+        topList : topArray
+      });
     }
 
-    this.setData({
-      topList : topArray
-    });
+
   },
 
   /**

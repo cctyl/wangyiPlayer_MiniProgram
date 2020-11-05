@@ -137,4 +137,8 @@
     height: 100rpx;
     line-height: 100rpx;
 
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 400rpx;
 }
