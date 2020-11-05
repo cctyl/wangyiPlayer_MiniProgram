@@ -6,7 +6,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    bannerList: []
+    bannerList: [], //轮播图列表
+    recommendSongList:[]  //推荐歌曲列表
   },
 
   /**
@@ -17,13 +18,17 @@ Page({
     let bannerListData = await request('/banner', {
       type: 2
     });
-
     this.setData({
 
       bannerList: bannerListData.banners
     });
 
-   
+
+    let recommendData = await request('/personalized',{limit:5});
+
+    this.setData({
+      recommendSongList: recommendData.result
+    });
   },
 
   /**

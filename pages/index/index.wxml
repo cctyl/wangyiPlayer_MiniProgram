@@ -2,7 +2,7 @@
 
   <!-- 轮播图区域 -->
   <swiper class="banners" indicator-dots="true" indicator-color="ivory" indicator-active-color="#d43c33">
-    <swiper-item wx:for="{{bannerList}}">
+    <swiper-item wx:for="{{bannerList}}" wx:key='bannerId'  wx:if="{{bannerList.length>0}}">
       <image src="{{item.pic}}"></image>
     </swiper-item>
 
@@ -58,23 +58,13 @@
     </view>
 
     <scroll-view class="recommendScroll" enable-flex="true" scroll-x="true">
-      <view class="scrollItem">
-        <image src="/static/images/scrollpic1.jpg"></image>
-        <text>这是一条没水平的广告这是一条没水平的广告这是一条没水平的广告这是一条没水平的广告</text>
+      <view class="scrollItem" wx:for="{{recommendSongList}}" wx:key='id' wx:if="{{recommendSongList.length>0}}" 
+      wx:for-item="recommendItem">
+        <image src="{{recommendItem.picUrl}}"></image>
+        <text>{{recommendItem.name}}</text>
       </view>
 
-      <view class="scrollItem">
-        <image src="/static/images/scrollpic1.jpg"></image>
-        <text>这是一条没水平的广告这是一条没水平的广告这是一条没水平的广告这是一条没水平的广告</text>
-      </view>
-      <view class="scrollItem">
-        <image src="/static/images/scrollpic1.jpg"></image>
-        <text>这是一条没水平的广告这是一条没水平的广告这是一条没水平的广告这是一条没水平的广告</text>
-      </view>
-      <view class="scrollItem">
-        <image src="/static/images/scrollpic1.jpg"></image>
-        <text>这是一条没水平的广告这是一条没水平的广告这是一条没水平的广告这是一条没水平的广告这是一条没水平的广告</text>
-      </view>
+     
 
     </scroll-view>
 
