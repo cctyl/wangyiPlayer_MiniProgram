@@ -21,6 +21,13 @@ Page({
 
   },
 
+  toLogin(){
+    console.log("页面跳转");
+    wx.navigateTo({
+      url: '/pages/login/login'
+    });
+  },
+
   handleTouchStart (event) {
     startY = event.touches[0].clientY
     this.setData({

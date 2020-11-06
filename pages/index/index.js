@@ -19,40 +19,37 @@ Page({
     //获取banner列表
     let bannerListData = await request('/banner', {
       type: 2
-    });
+    })
     this.setData({
 
       bannerList: bannerListData.banners
-    });
+    })
 
     //获取推荐歌曲数据
-    let recommendData = await request('/personalized', { limit: 5 });
+    let recommendData = await request('/personalized', { limit: 5 })
     this.setData({
       recommendSongList: recommendData.result
-    });
-
+    })
 
     //获取歌曲排行榜数据
-    let ids = ["19723756","3778678","71385702","2884035","5201625538"]; //写死几个排行榜的id
+    let ids = ['19723756', '3778678', '71385702', '2884035', '5201625538'] //写死几个排行榜的id
     //存放处理后的排行榜对象
-    let topArray =[];
-    for (let i=0;i<ids.length;i++){
+    let topArray = []
+    for (let i = 0; i < ids.length; i++) {
       //得到原始数据，数据量特别大
-      let tempData = await request('/playlist/detail',{id:ids[i]});
+      let tempData = await request('/playlist/detail', { id: ids[i] })
       //转换成自己的对象
-      let myTop ={
+      let myTop = {
         name: tempData.playlist.name,
-        tracks: tempData.playlist.tracks.slice(0,3)
-      };
+        tracks: tempData.playlist.tracks.slice(0, 3)
+      }
 
-      topArray.push(myTop);
-
+      topArray.push(myTop)
 
       this.setData({
-        topList : topArray
-      });
+        topList: topArray
+      })
     }
-
 
   },
 
