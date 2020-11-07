@@ -9,9 +9,9 @@ Page({
    */
   data: {
 
-    coverTransform: "translateY(0)",
-    coverTransition:'',
-    userInfo:{}
+    coverTransform: 'translateY(0)',
+    coverTransition: '',
+    userInfo: {}
 
   },
 
@@ -19,21 +19,21 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    let userInfo = wx.getStorageSync('userInfo');
-    console.log(userInfo);
-    if (userInfo){
+    let userInfo = wx.getStorageSync('userInfo')
+
+    if (userInfo) {
       this.setData({
-        userInfo: userInfo
+        userInfo: JSON.parse(userInfo)
       })
     }
 
   },
 
-  toLogin(){
-    console.log("页面跳转");
+  toLogin () {
+
     wx.navigateTo({
       url: '/pages/login/login'
-    });
+    })
   },
 
   handleTouchStart (event) {
@@ -45,14 +45,14 @@ Page({
 
   handleTouchMove (event) {
     moveY = event.touches[0].clientY
-    moveDistance = moveY - startY;
+    moveDistance = moveY - startY
 
-    if (moveDistance<0){
+    if (moveDistance < 0) {
 
-      return;
+      return
     }
-    if (moveDistance>80){
-      moveDistance = 80;
+    if (moveDistance > 80) {
+      moveDistance = 80
     }
     this.setData({
       coverTransform: `translateY(${moveDistance}rpx)`

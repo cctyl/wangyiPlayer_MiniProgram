@@ -65,9 +65,8 @@ Page({
 
     if (data.code == 200) {
 
-
-      wx.setStorageSync('userInfo',JSON.stringify(data.profile));
-      wx.setStorageSync('token',data.token);
+      wx.setStorageSync('userInfo', JSON.stringify(data.profile))
+      wx.setStorageSync('token', data.token)
 
       wx.showToast(
         {
@@ -77,11 +76,10 @@ Page({
         }
       )
 
-
-      wx.switchTab({
-        url:"/pages/personal/personal"
-      });
-    }else if (data.code == 502){
+      wx.reLaunch({
+        url: '/pages/personal/personal'
+      })
+    } else if (data.code == 502) {
 
       wx.showToast(
         {
@@ -90,7 +88,7 @@ Page({
           duration: 1000
         }
       )
-    }else if (data.code == 400){
+    } else if (data.code == 400) {
       wx.showToast(
         {
           title: '手机号错误！',
@@ -98,7 +96,7 @@ Page({
           duration: 1000
         }
       )
-    }else {
+    } else {
       wx.showToast(
         {
           title: '登陆异常！',
