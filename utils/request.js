@@ -2,9 +2,11 @@
 import config from "./config"
 export default (url,data={},method='GET' )=>{
 
+  let cookie = wx.getStorageSync('cookie');
 
   return new Promise(
     (resolve,reject)=>{
+
       wx.request({
         url: config.host + url,
         data,
@@ -14,9 +16,13 @@ export default (url,data={},method='GET' )=>{
         },
         fail:(err)=>{
 
-            reject(err);
+          reject(err);
+        },
+        header: {
+          cookie: cookie
         }
       });
+
     }
   );
  

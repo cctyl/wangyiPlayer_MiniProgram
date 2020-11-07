@@ -1,3 +1,5 @@
+import request from '../../utils/request'
+
 let startY = 0
 let moveY = 0
 let moveDistance = 0
@@ -11,7 +13,8 @@ Page({
 
     coverTransform: 'translateY(0)',
     coverTransition: '',
-    userInfo: {}
+    userInfo: {},//用户数据
+    recentPlayLit: [] //用户最近播放记录
 
   },
 
@@ -25,8 +28,21 @@ Page({
       this.setData({
         userInfo: JSON.parse(userInfo)
       })
+
+      //获取用户的最近播放记录
+      this.getUserPlayList(this.data.userInfo.userId)
+
     }
 
+  },
+
+  //获取用户最近播放记录
+  async getUserPlayList (userId) {
+
+    let data = await request('/user/record', { uid: userId, type: 1 },
+      'POST'
+    );
+    console.log(data)
   },
 
   toLogin () {

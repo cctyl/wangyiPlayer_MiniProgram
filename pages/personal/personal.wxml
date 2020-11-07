@@ -7,7 +7,7 @@
                        src='{{userInfo.avatarUrl?userInfo.avatarUrl:"/static/images/personal/missing-face.png"}}'></image>
             </view>
             <view class="info-box">
-                <text class="username">{{userInfo.nickname?userInfo.nickname:'张三'}}</text>
+                <text class="username">{{userInfo.nickname?userInfo.nickname:'游客'}}</text>
             </view>
         </view>
 
@@ -19,10 +19,10 @@
             <view class="tit">
                 <!-- 会员图标-->
                 <text class="iconfont icon-huiyuan-"></text>
-                硅谷会员
+                会员
             </view>
-            <text class="e-m">atguigu Union</text>
-            <text class="e-b">开通会员听歌, 撸代码</text>
+            <text class="e-m">网易云</text>
+            <text class="e-b">开通会员</text>
         </view>
     </view>
 

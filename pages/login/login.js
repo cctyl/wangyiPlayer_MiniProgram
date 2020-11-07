@@ -66,7 +66,7 @@ Page({
     if (data.code == 200) {
 
       wx.setStorageSync('userInfo', JSON.stringify(data.profile))
-      wx.setStorageSync('token', data.token)
+      wx.setStorageSync('cookie',data.cookie);
 
       wx.showToast(
         {
