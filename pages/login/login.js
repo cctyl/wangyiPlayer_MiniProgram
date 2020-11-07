@@ -66,8 +66,8 @@ Page({
     if (data.code == 200) {
 
 
-      wx.setStorage('userInfo',JSON.stringify(data.profile));
-      wx.setStorage('token',data.token);
+      wx.setStorageSync('userInfo',JSON.stringify(data.profile));
+      wx.setStorageSync('token',data.token);
 
       wx.showToast(
         {

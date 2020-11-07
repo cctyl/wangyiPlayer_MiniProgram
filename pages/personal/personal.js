@@ -10,7 +10,8 @@ Page({
   data: {
 
     coverTransform: "translateY(0)",
-    coverTransition:''
+    coverTransition:'',
+    userInfo:{}
 
   },
 
@@ -18,6 +19,13 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    let userInfo = wx.getStorageSync('userInfo');
+    console.log(userInfo);
+    if (userInfo){
+      this.setData({
+        userInfo: userInfo
+      })
+    }
 
   },
 
