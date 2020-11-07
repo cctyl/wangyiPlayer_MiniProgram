@@ -19,3 +19,23 @@
   color: #d43c33;
 
 }
+
+.videoContainer .navScroll{
+
+  display: flex;
+  white-space: nowrap;
+}
+
+
+.navScroll .navItem{
+
+  padding: 0 30rpx;
+  font-size: 28rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+}
+
+.navItem .active{
+
+  border-bottom: 1rpx solid #d43c43;
+}
