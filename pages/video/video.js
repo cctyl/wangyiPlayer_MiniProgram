@@ -6,7 +6,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-    videoGroupList: []
+    videoGroupList: [],
+    videoList: []
+
   },
 
   /**
@@ -14,17 +16,62 @@ Page({
    */
   onLoad: function (options) {
 
-    this.getVideoGroupList();
+    this.getVideoGroupList()
+
   },
 
-  async getVideoGroupList() {
+  /**
+   * 获得导航标签的数据
+   * @returns {Promise<void>}
+   */
+  async getVideoGroupList () {
 
     let groupListData = await request('/video/group/list')
-
+    let rawData = groupListData.data.splice(0, 14)
     this.setData({
-      videoGroupList: groupListData.data.splice(0, 14)
+      videoGroupList: rawData,
+      navId: rawData[0].id
     })
 
+    this.getVideoList(this.data.navId)
+  },
+
+  // 获取视频列表数据
+  async getVideoList (navId) {
+    let groupListData = await request('/video/group', { id: navId })
+
+    let index = 0
+    let rawData = groupListData.datas.map(item => {
+      item.num = index++
+      return item
+    })
+
+    this.setData({
+      videoList: rawData
+    })
+
+  },
+
+  //获取当前视频播放url
+  async playVideo (event) {
+    let id = event.currentTarget.id
+    let urlData = await request('/video/url', { id: id })
+
+    let url = urlData.urls.url;
+    wx.navigateTo({
+      url:`/pages/play/play?url=`+url
+    });
+
+
+
+  },
+
+  changeNav (event) {
+
+    let navId = event.currentTarget.id
+    this.setData({
+      navId: navId * 1
+    })
   },
 
   /**

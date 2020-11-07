@@ -11,11 +11,21 @@
     <!--导航区域-->
     <scroll-view scroll-x enable-flex class="navScroll">
         <view class="navItem " wx:for="{{videoGroupList}}" wx:key="id">
-            <view class="navContent active">
+            <view class="navContent {{item.id==navId?'active':''}}" bindtap="changeNav" id="{{item.id}}">
                 {{item.name}}
             </view>
         </view>
 
 
+    </scroll-view>
+
+    <!--视频列表区域-->
+    <scroll-view scroll-y>
+        
+        <view class="videoItem" wx:for="{{videoList}}" wx:key="num">
+            <image src="{{item.data.coverUrl}}" bindtap="playVideo" id="{{item.data.vid}}"></image>
+
+
+        </view>
     </scroll-view>
 </view>
