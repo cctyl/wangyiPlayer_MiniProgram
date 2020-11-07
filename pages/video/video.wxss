@@ -1,1 +1,21 @@
-/* pages/video.wxss */
+.videoContainer .header{
+  display: flex;
+}
+
+.videoContainer .header image{
+  width: 60rpx;
+  height: 60rpx;
+}
+
+.videoContainer .header .search{
+
+  border: 1rpx solid #eee;
+  border-radius: 50rpx;
+  flex: 1;
+  margin:0 20rpx;
+  font-size: 26rpx;
+  text-align: center;
+  line-height: 60rpx;
+  color: #d43c33;
+
+}
