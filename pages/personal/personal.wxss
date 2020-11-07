@@ -210,3 +210,7 @@
 .cardList .card-item .more {
   float: right;
 }
+.recentScroll{
+
+  display: flex;
+}

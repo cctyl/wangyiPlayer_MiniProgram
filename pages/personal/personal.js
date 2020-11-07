@@ -29,8 +29,9 @@ Page({
         userInfo: JSON.parse(userInfo)
       })
 
+
       //获取用户的最近播放记录
-      this.getUserPlayList(this.data.userInfo.userId)
+      this.getUserPlayList(this.data.userInfo.userId);
 
     }
 
@@ -42,7 +43,16 @@ Page({
     let data = await request('/user/record', { uid: userId, type: 1 },
       'POST'
     );
-    console.log(data)
+
+    let num = 0;
+    let mydata = data.weekData.map(item=>{
+      item.num =num++;
+    });
+    this.setData({
+      recentPlayLit: data.weekData
+    });
+
+
   },
 
   toLogin () {
