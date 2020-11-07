@@ -4,6 +4,10 @@ export default (url,data={},method='GET' )=>{
 
   let cookie = wx.getStorageSync('cookie');
 
+  if (!cookie){
+    //如果获取不到cookie，就默认置空，不要设置为undefine
+    cookie="";
+  }
   return new Promise(
     (resolve,reject)=>{
 
