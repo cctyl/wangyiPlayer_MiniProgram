@@ -57,7 +57,9 @@ Page({
     let id = event.currentTarget.id
     let urlData = await request('/video/url', { id: id })
 
-    let url = urlData.urls.url;
+    let url = urlData.urls[0].url;
+    debugger
+    console.log(url)
     wx.navigateTo({
       url:`/pages/play/play?url=`+url
     });
@@ -71,7 +73,11 @@ Page({
     let navId = event.currentTarget.id
     this.setData({
       navId: navId * 1
-    })
+    });
+
+
+    //更新视频列表
+    this.getVideoList(navId);
   },
 
   /**

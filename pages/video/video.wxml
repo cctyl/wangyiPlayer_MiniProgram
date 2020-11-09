@@ -21,11 +21,34 @@
 
     <!--视频列表区域-->
     <scroll-view scroll-y>
-        
+
         <view class="videoItem" wx:for="{{videoList}}" wx:key="num">
             <image src="{{item.data.coverUrl}}" bindtap="playVideo" id="{{item.data.vid}}"></image>
 
 
+            <view class="content">{{item.data.title}}</view>
+
+            <view class="footer">
+                <image class="avater" src="{{item.data.creator.avatarUrl}}"></image>
+                <text class="nickname">{{item.data.creator.nickname}}</text>
+                <view class="commend_praised">
+                    <text class="item">
+                        <text class="iconfont xxx"></text>
+                        <text class="count">{{item.data.praisedCount}}</text>
+                    </text>
+                    <text class="item">
+                        <text class="iconfont xxx"></text>
+                        <text class="count">{{item.data.commentCount}}</text>
+                    </text>
+
+                    <button open-type="share" class="item btn">
+                        <text class="iconfont xxx"></text>
+                    </button>
+
+                </view>
+            </view>
         </view>
+
+
     </scroll-view>
 </view>
