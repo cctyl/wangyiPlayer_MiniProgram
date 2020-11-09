@@ -26,7 +26,9 @@
     <scroll-view scroll-y>
 
         <view class="videoItem" wx:for="{{videoList}}" wx:key="num">
-            <video src="{{videoUrl}}" class="common" wx:if="{{videoId == item.data.vid}}"></video>
+            <video src="{{videoUrl}}" class="common" wx:if="{{videoId == item.data.vid}}" autoplay="true"
+            object-fit="cover"
+            ></video>
             <image wx:else src="{{item.data.coverUrl}}" class="common" bindtap="handlePlay"
                    id="{{item.data.vid}}"></image>
 
