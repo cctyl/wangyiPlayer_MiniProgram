@@ -7,7 +7,9 @@ Page({
    */
   data: {
     videoGroupList: [],
-    videoList: []
+    videoList: [],
+    videoId: '',
+    videoUrl:''
 
   },
 
@@ -40,9 +42,9 @@ Page({
   async getVideoList (navId) {
 
     wx.showLoading({
-      title:"正在加载中...",
-      mask:true
-    });
+      title: '正在加载中...',
+      mask: true
+    })
     let groupListData = await request('/video/group', { id: navId })
 
     let index = 0
@@ -54,7 +56,7 @@ Page({
     this.setData({
       videoList: rawData
     })
-    wx.hideLoading();
+    wx.hideLoading()
   },
 
   //获取当前视频播放url
@@ -62,14 +64,12 @@ Page({
     let id = event.currentTarget.id
     let urlData = await request('/video/url', { id: id })
 
-    let url = urlData.urls[0].url;
+    let url = urlData.urls[0].url
     debugger
     console.log(url)
     wx.navigateTo({
-      url:`/pages/play/play?url=`+url
-    });
-
-
+      url: `/pages/play/play?url=` + url
+    })
 
   },
 
@@ -78,11 +78,23 @@ Page({
     let navId = event.currentTarget.id
     this.setData({
       navId: navId * 1
-    });
-
+    })
 
     //更新视频列表
-    this.getVideoList(navId);
+    this.getVideoList(navId)
+  },
+
+  async handlePlay (event) {
+    let id = event.currentTarget.id;
+    let urlData = await request('/video/url', { id: id });
+    let url = urlData.urls[0].url;
+    this.setData({
+      videoId: event.currentTarget.id,
+      videoUrl: url
+    })
+
+
+
   },
 
   /**
