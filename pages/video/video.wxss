@@ -68,7 +68,6 @@
 
 
 
-
 .videoItem .content {
   font-size: 26rpx;
   height:80rpx;
@@ -79,48 +78,43 @@
   text-overflow: ellipsis;
 }
 
-/* footer */
-.footer {
-  border-top: 1rpx solid #eee;
-  padding: 20rpx 0;
+.footer{
+  display: flex;
 }
-.footer .avatar {
+
+.footer image{
   width: 60rpx;
   height: 60rpx;
-  border-radius: 50%;
-  vertical-align: middle;
+  border-radius: 10rpx;
+
 }
 
-.footer  .nickName {
+.footer .nickname{
+
   font-size: 26rpx;
+  height:80rpx;
+  width:400rpx;
+  line-height: 50rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
   vertical-align: middle;
   margin-left: 20rpx;
+
 }
 
-.footer .comments_praised {
+.footer .item{
+
   float: right;
+
+  height:80rpx;
+
 }
 
-.comments_praised .btn {
+.footer .btn{
   display: inline;
   padding: 0;
   background-color: transparent;
   border-color: transparent;
 }
-
-.comments_praised .btn:after {
-  border: none;
-}
-
-.comments_praised .item {
-  margin-left: 50rpx;
-  position: relative;
-}
-
-.comments_praised .item .count {
-  position: absolute;
-  top: -20rpx;
-  font-size: 20rpx;
-}
-
-
