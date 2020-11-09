@@ -38,6 +38,11 @@ Page({
 
   // 获取视频列表数据
   async getVideoList (navId) {
+
+    wx.showLoading({
+      title:"正在加载中...",
+      mask:true
+    });
     let groupListData = await request('/video/group', { id: navId })
 
     let index = 0
@@ -49,7 +54,7 @@ Page({
     this.setData({
       videoList: rawData
     })
-
+    wx.hideLoading();
   },
 
   //获取当前视频播放url
