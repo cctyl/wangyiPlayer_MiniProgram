@@ -114,7 +114,7 @@
 
 .footer .btn{
   display: inline;
-  padding: 0;
+  padding: 0 1px;
   background-color: transparent;
   border-color: transparent;
 }
