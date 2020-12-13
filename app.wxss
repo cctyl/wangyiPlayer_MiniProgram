@@ -1,5 +1,0 @@
-@import "/static/iconfonts/iconfonts.wxss";
-
-page {
-  height: 100%;
-}
