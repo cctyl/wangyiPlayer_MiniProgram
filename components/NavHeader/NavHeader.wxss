@@ -1,0 +1,21 @@
+.hd>text{
+
+  color: #b2b0b0;
+}
+.hd{
+  margin-bottom: 22rpx;
+}
+.hd .hd-t{
+  padding-top: 10rpx;
+}
+.hd .hd-t text:first-child{
+  font-size: 40rpx;
+}
+
+.hd .hd-t text:last-child{
+  float: right;
+  border-radius: 30rpx;
+  padding: 10rpx 20rpx;
+  font-size: 24rpx;
+  border: 1px solid #100410;
+}

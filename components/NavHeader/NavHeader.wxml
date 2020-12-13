@@ -1,0 +1,7 @@
+<view class="hd">
+    <text>{{title}}</text>
+    <view class="hd-t">
+        <text>{{nav}}</text>
+        <text>查看更多</text>
+    </view>
+</view>

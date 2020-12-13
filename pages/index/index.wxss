@@ -1,0 +1,115 @@
+.banners {
+  width: 100%;
+  height: 300rpx;
+}
+.banners image{
+  width: 100%;
+  height: 100%;
+}
+
+/*导航区域*/
+.navContainer{
+  display: flex;
+}
+
+.navItem{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 20%;
+}
+
+.navItem .iconfont{
+  width: 100rpx;
+  height: 100rpx;
+  text-align: center;
+  line-height: 100rpx;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 50rpx;
+  background-color: rgb(240,19,19);
+  margin: 20rpx 0;
+}
+
+.navItem text:last-child{
+  font-size: 26rpx;
+}
+
+
+
+/*--------------歌曲推荐模块-----------*/
+.recommend{
+  margin: 36rpx 24rpx;
+}
+
+/*推荐内容*/
+
+.recommend .bd{
+  display: flex;
+  height: 300rpx;
+}
+.recommend .scrollItem{
+  width: 200rpx;
+
+  margin-right: 20rpx;
+}
+
+.scrollItem image{
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 10rpx;
+}
+
+.scrollItem text{
+  font-size: 26rpx;
+/*多行文本溢出*/
+  white-space:normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  /*弹性伸缩盒子模型显示*/
+  display: -webkit-box;
+  /*限制再一个块元素显示的文本的行数*/
+  -webkit-line-clamp: 2;
+
+  /*设置或检索伸缩和对象的子元素的排列方式*/
+  -webkit-box-orient: vertical;
+
+}
+
+
+/*-------------排行榜区域--------------*/
+.topList{
+  padding: 20rpx;
+}
+.topListSwiper{
+  height: 400rpx;
+}
+.topListSwiper .swiperItem{
+  width: 96%;
+  background-color: #fbfbfb;
+}
+.topListSwiper .title{
+  font-size: 30rpx;
+  padding: 10rpx 0;
+}
+.topListSwiper .musicItem{
+  display: flex;
+  margin-bottom: 10rpx;
+}
+.topListSwiper .musicItem image{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 15rpx;
+}
+.topListSwiper .musicItem .count{
+  width: 100rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+}
+.topListSwiper .musicItem  .musicName{
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+}
